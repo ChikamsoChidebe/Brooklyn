@@ -1,0 +1,255 @@
+/* Dark Mode Styles for Brooklyn Unisex Salon */
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #f1c40f;
+    --secondary-color: #34495e;
+    --accent-color: #e74c3c;
+    --text-dark: #ecf0f1;
+    --text-light: #bdc3c7;
+    --white: #2c3e50;
+    --black: #ecf0f1;
+    --gray-light: #34495e;
+    --gray-medium: #2c3e50;
+    --gray-dark: #1a252f;
+    --gradient-primary: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    --gradient-secondary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.3);
+    --shadow-medium: 0 5px 25px rgba(0,0,0,0.4);
+    --shadow-heavy: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-heavy);
+}
+
+.dark-mode-toggle i {
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.dark-mode-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] body {
+    background: var(--gray-dark);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(44, 62, 80, 0.98);
+}
+
+[data-theme="dark"] .hero-overlay {
+    background: linear-gradient(135deg, rgba(44,62,80,0.9) 0%, rgba(241,196,15,0.7) 100%);
+}
+
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .team-member,
+[data-theme="dark"] .booking-form-container,
+[data-theme="dark"] .contact-form-container,
+[data-theme="dark"] .booking-summary {
+    background: var(--gray-medium);
+    border: 1px solid var(--gray-light);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .team-member:hover {
+    box-shadow: 0 10px 40px rgba(241,196,15,0.2);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    background: var(--gray-light);
+    color: var(--text-dark);
+    border-color: var(--gray-dark);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(241,196,15,0.1);
+}
+
+[data-theme="dark"] .selection-item {
+    background: var(--gray-light);
+    border-color: var(--gray-dark);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .selection-item:hover,
+[data-theme="dark"] .selection-item.selected {
+    border-color: var(--primary-color);
+    background: rgba(241,196,15,0.1);
+}
+
+[data-theme="dark"] .time-slot {
+    background: var(--gray-light);
+    border-color: var(--gray-dark);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .time-slot:hover,
+[data-theme="dark"] .time-slot.selected {
+    background: var(--primary-color);
+    color: var(--gray-dark);
+}
+
+[data-theme="dark"] .gallery-item:hover .gallery-overlay {
+    background: linear-gradient(135deg, rgba(241,196,15,0.9) 0%, rgba(44,62,80,0.9) 100%);
+}
+
+[data-theme="dark"] .testimonials-section {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .footer {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .modal {
+    background: rgba(0,0,0,0.95);
+}
+
+[data-theme="dark"] .modal-content {
+    background: var(--gray-medium);
+    border: 1px solid var(--gray-light);
+}
+
+/* Dark Mode Animations */
+[data-theme="dark"] .animate-glow {
+    animation: darkGlow 2s ease-in-out infinite;
+}
+
+@keyframes darkGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--primary-color),
+                    0 0 10px var(--primary-color),
+                    0 0 15px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--primary-color),
+                    0 0 20px var(--primary-color),
+                    0 0 30px var(--primary-color);
+    }
+}
+
+/* Dark Mode Particles */
+[data-theme="dark"] .particle {
+    background: var(--primary-color);
+    box-shadow: 0 0 6px var(--primary-color);
+}
+
+/* Dark Mode Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--gray-dark);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #f39c12;
+}
+
+/* Dark Mode Selection */
+[data-theme="dark"] ::selection {
+    background: var(--primary-color);
+    color: var(--gray-dark);
+}
+
+[data-theme="dark"] ::-moz-selection {
+    background: var(--primary-color);
+    color: var(--gray-dark);
+}
+
+/* Dark Mode Focus Styles */
+[data-theme="dark"] .btn:focus,
+[data-theme="dark"] .nav-link:focus,
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Dark Mode High Contrast Support */
+@media (prefers-contrast: high) {
+    [data-theme="dark"] {
+        --primary-color: #ffff00;
+        --text-dark: #ffffff;
+        --text-light: #cccccc;
+        --white: #000000;
+        --gray-light: #333333;
+        --gray-medium: #1a1a1a;
+        --gray-dark: #000000;
+    }
+}
+
+/* Dark Mode Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="dark"] .dark-mode-toggle {
+        transition: none;
+    }
+    
+    [data-theme="dark"] .dark-mode-toggle:hover {
+        transform: translateY(-50%);
+    }
+    
+    [data-theme="dark"] .animate-glow {
+        animation: none;
+        box-shadow: 0 0 10px var(--primary-color);
+    }
+}
+
+/* Dark Mode Print Styles */
+@media print {
+    [data-theme="dark"] {
+        --text-dark: #000000;
+        --text-light: #333333;
+        --white: #ffffff;
+        --gray-light: #f0f0f0;
+        --gray-medium: #e0e0e0;
+        --gray-dark: #cccccc;
+    }
+    
+    [data-theme="dark"] .dark-mode-toggle {
+        display: none;
+    }
+}

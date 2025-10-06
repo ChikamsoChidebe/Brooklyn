@@ -1,0 +1,51 @@
+{
+  "name": "brooklyn-unisex-salon",
+  "version": "1.0.0",
+  "description": "A comprehensive, modern website for Brooklyn Unisex Salon",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "npx clean-css-cli -o assets/css/style.min.css assets/css/style.css assets/css/animations.css assets/css/responsive.css",
+    "minify-js": "npx terser assets/js/main.js assets/js/booking.js assets/js/gallery.js assets/js/animations.js -o assets/js/app.min.js",
+    "optimize-images": "npx imagemin assets/images/*.{jpg,png} --out-dir=assets/images/optimized",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "salon",
+    "beauty",
+    "hair",
+    "unisex",
+    "brooklyn",
+    "booking",
+    "responsive",
+    "pwa"
+  ],
+  "author": "Brooklyn Unisex Salon",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.19.4",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "lighthouse": "^11.0.0",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brooklyn-salon/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brooklyn-salon/website/issues"
+  },
+  "homepage": "https://brooklynunisexsalon.com"
+}
