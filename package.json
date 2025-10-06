@@ -7,8 +7,8 @@
     "start": "npx serve . -p 3000",
     "dev": "npx live-server --port=3000 --open=/index.html",
     "build": "npm run minify-css && npm run minify-js",
-    "minify-css": "npx clean-css-cli -o assets/css/style.min.css assets/css/style.css assets/css/animations.css assets/css/responsive.css",
-    "minify-js": "npx terser assets/js/main.js assets/js/booking.js assets/js/gallery.js assets/js/animations.js -o assets/js/app.min.js",
+    "minify-css": "npx clean-css-cli -o assets/css/style.min.css assets/css/modern-style.css",
+    "minify-js": "npx terser assets/js/modern-app.js -o assets/js/app.min.js",
     "optimize-images": "npx imagemin assets/images/*.{jpg,png} --out-dir=assets/images/optimized",
     "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
     "test": "echo \"No tests specified\" && exit 0"
